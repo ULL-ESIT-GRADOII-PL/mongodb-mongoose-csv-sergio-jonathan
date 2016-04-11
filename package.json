@@ -1,36 +1,55 @@
 {
-  "name": "PL_practica2",
-  "version": "1.0.0",
-  "description": "Analizador de cadenas csv usando AJAX",
-  "main": "csv.js",
+  "name": "conversor_medidas",
+  "version": "0.0.1",
+  "description": "Analizador CSV en JavaScript",
+  "main": "assets/js/csv.js",
   "scripts": {
-    "test": "firefox tests/index.html"
+    "test": "gulp tests",
+    "start": "node app.js",
+    "chai": "curl https://raw.githubusercontent.com/chaijs/chai/master/chai.js -o tests/chai.js",
+    "mocha": "curl https://raw.githubusercontent.com/mochajs/mocha/master/mocha.js -o tests/mocha.js && curl https://raw.githubusercontent.com/mochajs/mocha/master/mocha.css -o tests/mocha.css"
+  },
+  "engines": {
+    "node": ">=0.12 <=5"
   },
   "repository": {
     "type": "git",
-    "url": XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    "url": "git+https://github.com/ULL-ESIT-GRADOII-PL/localstorage-jquery-underscore-express-sass-heroku-sergio-jonathan.git"
   },
   "keywords": [
-    "csv"
+    "conversor"
   ],
-  "author": XXXXXXXXXX
-  "contributors": [],
+  "author": "Sergio Rodríguez y Jonathan Expósito",
   "license": "ISC",
   "bugs": {
-    "url": XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    "url": "https://github.com/ULL-ESIT-GRADOII-PL/localstorage-jquery-underscore-express-sass-heroku-sergio-jonathan/issues"
   },
-  "homepage": XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-  "dependencies": {
-	"jquery": "*",
-    "underscore": "*",
-	"express": "~3.2.6",
-    "ejs": "*",
-    "body-parser": "~1.12.0",
-    "express-ejs-layouts": "~1.1.0"
-  },
-  "engines": {
-    "node": XXXXX
-  },
+  "homepage": "https://github.com/ULL-ESIT-GRADOII-PL/localstorage-jquery-underscore-express-sass-heroku-sergio-jonathan",
   "devDependencies": {
+    "chai": "*",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.4",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-rename": "^1.2.2",
+    "gulp-shell": "^0.5.2",
+    "gulp-uglify": "^1.5.3",
+    "imagemin-jpegtran": "^4.3.2",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-mocha": "^0.2.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "mocha": "*",
+    "phantomjs-prebuilt": "^2.1.7"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "ejs": "^2.4.1",
+    "express": "^4.13.4"
   }
 }
