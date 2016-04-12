@@ -1,4 +1,4 @@
-(function(exports) => {
+(() => {
   "use strict";
 
   const regexp = /"((?:[^"\\]|\\.)*)"|([^,\s]+)|,\s*(?=,|$)|^\s*,/g;
@@ -52,4 +52,4 @@
   };
 
   module.exports = calculate;
-})(this);
+})();

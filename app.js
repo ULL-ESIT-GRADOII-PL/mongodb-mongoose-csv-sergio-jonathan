@@ -13,14 +13,14 @@ app.use(expressLayouts);
 
 app.use(express.static(__dirname + '/public'));
 
-const calculate = require('./models/calculate.js');
+const calculate = require('./models/calculate');
 
 app.get('/', (request, response) => {
   response.render('index', { title: 'Analizador CSV' });
 });
 
 app.get('/csv', (request, response) => {
-  response.send({ "data": calculate(request.query.input) });
+  response.send({ "rows": calculate(request.query.input) });
 });
 
 app.listen(app.get('port'), () => {
