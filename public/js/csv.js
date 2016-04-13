@@ -4,7 +4,7 @@
 
 const resultTemplate = `
 <div class="contenido">
-      <table class="center" id="result">
+      <table id="result">
           <% _.each(rows, (row) => { %>
           <tr class="<%=row.type%>">
               <% _.each(row.items, (name) =>{ %>
@@ -83,7 +83,7 @@ $(document).ready(() => {
    });
    /* botones para rellenar el textarea */
    $('button.example').each( (_,y) => {
-     $(y).click( () => { dump(`${$(y).text()}.txt`); });
+     $(y).click( () => { dump(`examples/${$(y).text()}.txt`); });
    });
 
     // Setup the drag and drop listeners.
