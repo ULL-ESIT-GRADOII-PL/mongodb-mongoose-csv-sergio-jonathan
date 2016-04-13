@@ -1,6 +1,6 @@
 var expect = chai.expect;
 
-describe("Distancia", function() {
+describe("Analizador CSV", function() {
 
   describe("Calculate", function() {
     it("Debería aceptar una cadena literal en formato CSV que represente una tabla", function() {
