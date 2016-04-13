@@ -15,7 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'public/tests/calculate-nomodule.js',
+      'public/tests/chai.js',
       'public/tests/*.js'
     ],
 
