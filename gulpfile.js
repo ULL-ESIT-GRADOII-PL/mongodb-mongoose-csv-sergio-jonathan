@@ -13,44 +13,41 @@ var gulp = require('gulp'),
 
 
 gulp.task('minify', function() {
-  gulp.src(['!assets/js/*.min.js', 'assets/js/*.js'])
-    .pipe(uglify({
-      mangle: false
-    }))
+  gulp.src(['!public/js/*.min.js', 'public/js/*.js'])
     .pipe(gulp.dest('minified/js'));
 
-  gulp.src(['!assets/tests/*.min.js', 'assets/tests/*.js'])
+  gulp.src(['!public/tests/*.min.js', 'public/tests/*.js'])
     .pipe(uglify({
       mangle: false
     }))
     .pipe(gulp.dest('minified/tests'));
 
-  gulp.src('assets/indice.html')
+  gulp.src('public/indice.html')
     .pipe(minifyHTML())
     .pipe(rename(function(path) {
       path.basename = "index";
     }))
     .pipe(gulp.dest('minified'))
 
-  gulp.src('assets/tests/index.html')
+  gulp.src('public/tests/index.html')
     .pipe(minifyHTML())
     .pipe(gulp.dest('minified/tests'))
 
-  gulp.src(['!assets/css/*.min.css', 'assets/css/*.css'])
+  gulp.src(['!public/css/*.min.css', 'public/css/*.css'])
     .pipe(minifyCSS({
       keepBreaks: true,
       processImport: false
     }))
     .pipe(gulp.dest('minified/css'))
 
-  gulp.src(['!assets/tests/*.min.css', 'assets/tests/*.css'])
+  gulp.src(['!public/tests/*.min.css', 'public/tests/*.css'])
     .pipe(minifyCSS({
       keepBreaks: true,
       processImport: false
     }))
     .pipe(gulp.dest('minified/tests'))
 
-  gulp.src('assets/images/*')
+  gulp.src('public/images/*')
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [{
