@@ -1,40 +1,23 @@
-# Práctica 2: Comma separated values (CSV) with AJAX
+# ULL ESIT Grado de Ingeniería Informática
 
-## jQuery.get( url [, data ] [, success ] [, dataType ] )
-* url
-  * Type: String
-  * A string containing the URL to which the request is sent.
-* data
-  * Type: PlainObject or String
-  * A plain object or string that is sent to the server with the request.
-* success
-  * Type: Function( PlainObject data, String textStatus, jqXHR jqXHR )
-  * A callback function that is executed if the request succeeds. 
-    Required if `dataType` is provided, but you can use `null` or `jQuery.noop` as a placeholder.
-* dataType
-  * Type: String
-  * The type of data expected from the server. Default: Intelligent Guess (xml, json, script, text, html).
+## Práctica: Analizador de cadenas de texto en CSV [![Build Status](https://travis-ci.org/alu0100699968/ajax-ecma6-modules-files-sergio-jonathan.svg?branch=master)](https://travis-ci.org/alu0100699968/ajax-ecma6-modules-files-sergio-jonathan)
 
-## jQuery.get( [settings ] )
-* settings
-  * Type: PlainObject
-  * A set of key/value pairs that configure the Ajax request. 
-  * All properties except for `url` are optional. 
-  * A default can be set for any option with `$.ajaxSetup()`.
+Este repositorio aloja la práctica del analizador de cadenas de texto en CSV, que se encuentra
+desplegada en Heroku y tiene soporte de Karma, Gulp y Travis.
 
-This is a shorthand Ajax function, which is equivalent to:
+### Despliegue en github.io
 
-```javascript
-$.ajax({
-  url: url,
-  data: data,
-  success: success,
-  dataType: dataType
-});
-```
+* [Página web del proyecto](http://ull-esit-gradoii-pl.github.io/ajax-ecma6-modules-files-sergio-jonathan/)
+* [Repositorio en el que trabajamos](https://github.com/alu0100696455/ajax-ecma6-modules-files-sergio-jonathan/)
+* [Enlace a los tests del proyecto](http://ull-esit-gradoii-pl.github.io/ajax-ecma6-modules-files-sergio-jonathan/tests/)
+* [Despliegue en Heroku](http://csv-analyzer.herokuapp.com/)
 
-The success callback function is passed the returned data, which will be an XML root element, text string, JavaScript file, or JSON object, depending on the MIME type of the response. It is also passed the text status of the response.
+### Campus Virtual
 
-# Heroku 
-https://cvsajax.herokuapp.com/
+* [Procesadores de Lenguajes](https://campusvirtual.ull.es/1516/course/view.php?id=178)
+* [Descripción de la práctica (Gitbooks)](https://casianorodriguezleon.gitbooks.io/pl1516/content/practicas/csv.html)
 
+### Autores
+
+* [Jonathan Expósito Martín](https://alu0100696455.github.io)
+* [Sergio Rodríguez Martín](https://alu0100699968.github.io)
