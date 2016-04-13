@@ -2,7 +2,7 @@
   "name": "conversor_medidas",
   "version": "0.0.1",
   "description": "Analizador CSV en JavaScript",
-  "main": "assets/js/csv.js",
+  "main": "public/js/csv.js",
   "scripts": {
     "test": "gulp tests",
     "start": "node app.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ULL-ESIT-GRADOII-PL/localstorage-jquery-underscore-express-sass-heroku-sergio-jonathan.git"
+    "url": "git+https://github.com/ULL-ESIT-GRADOII-PL/ajax-ecma6-modules-files-sergio-jonathan.git"
   },
   "keywords": [
     "conversor"
@@ -22,9 +22,9 @@
   "author": "Sergio Rodríguez y Jonathan Expósito",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ULL-ESIT-GRADOII-PL/localstorage-jquery-underscore-express-sass-heroku-sergio-jonathan/issues"
+    "url": "https://github.com/ULL-ESIT-GRADOII-PL/ajax-ecma6-modules-files-sergio-jonathan/issues"
   },
-  "homepage": "https://github.com/ULL-ESIT-GRADOII-PL/localstorage-jquery-underscore-express-sass-heroku-sergio-jonathan",
+  "homepage": "https://github.com/ULL-ESIT-GRADOII-PL/ajax-ecma6-modules-files-sergio-jonathan",
   "devDependencies": {
     "chai": "*",
     "del": "^2.2.0",
