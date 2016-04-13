@@ -15,8 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'assets/js/csv.js',
-      'assets/tests/*.js'
+      'public/tests/calculate-nomodule.js',
+      'public/tests/*.js'
     ],
 
 

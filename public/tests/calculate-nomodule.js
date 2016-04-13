@@ -1,4 +1,4 @@
-(() => {
+(function(exports) {
   "use strict";
 
   const regexp = /"((?:[^"\\]|\\.)*)"|([^,\s]+)|,\s*(?=,|$)|^\s*,/g;
@@ -10,7 +10,7 @@
         var commonLength = lines[i].match(regexp).length;
         break;
       }
-      
+
     let r = [];
     const removeQuotes = (field) => {
       return field.replace(/,\s*$/, '').
@@ -46,5 +46,5 @@
     return r;
   };
 
-  module.exports = calculate;
-})();
+  exports.calculate = calculate;
+})(this);
