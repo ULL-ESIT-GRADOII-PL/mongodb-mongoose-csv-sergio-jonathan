@@ -64,6 +64,10 @@ nav > ul > li {
   text-align: center;
 }
 
+.pagina a {
+  color: white;
+}
+
 .pagina textarea {
   color: #676767;
 }

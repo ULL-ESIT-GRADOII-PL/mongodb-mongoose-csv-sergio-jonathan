@@ -15,7 +15,7 @@ desplegada en Heroku y tiene soporte de Karma, Gulp y Travis.
 ### Campus Virtual
 
 * [Procesadores de Lenguajes](https://campusvirtual.ull.es/1516/course/view.php?id=178)
-* [Descripción de la práctica (Gitbooks)](https://casianorodriguezleon.gitbooks.io/pl1516/content/practicas/csv.html)
+* [Descripción de la práctica (Gitbooks)](https://casianorodriguezleon.gitbooks.io/pl1516/content/practicas/practicaajaxcsv.html)
 
 ### Autores
 
