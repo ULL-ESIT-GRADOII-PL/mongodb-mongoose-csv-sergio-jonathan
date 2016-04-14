@@ -5,11 +5,11 @@
   var calculate = function(original) {
     var lineas = original.split(/\n+\s*/);
 
-    for(var i in lineas)
-      if(lineas[i].match(regexp)) {
-        var commonLength = lineas[i].match(regexp).length;
-        break;
-      }
+    lineas = lineas.filter(function(e) {
+        return e.match(regexp);
+    });
+
+    var commonLength = lineas[0].match(regexp).length;
 
     var r = [];
     var removeQuotes = function(field) {
