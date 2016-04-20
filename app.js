@@ -23,6 +23,19 @@ app.get('/csv', (request, response) => {
   response.send({ "rows": calculate(request.query.input) });
 });
 
+app.param('entrada', function (req, res, next, entrada) {  
+  if (entrada.match(/^[a-z_]\w*\.csv$/i)) { 
+      req.entrada = entrada;
+  } else { 
+      next(new Error(`<${entrada}> no casa con los requisitos de 'entrada'`));
+   }
+  next();
+});
+
+app.get('/mongo/:entrada', function(req, res) { 
+  console.log(req.entrada);
+});
+
 app.listen(app.get('port'), () => {
     console.log(`Node app is running at localhost: ${app.get('port')}` );
 });
