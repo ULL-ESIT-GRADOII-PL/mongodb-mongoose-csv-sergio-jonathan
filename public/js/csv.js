@@ -97,6 +97,13 @@
             }
         });
 
+        $("#guardar").click(() => {
+          if (window.localStorage) localStorage.original = original.value;
+          $.get("/mongo/" + $("#titulo").val(), {
+            content: $("#original").val()
+          });
+        });
+
         // Setup the drag and drop listeners.
         //var dropZone = document.getElementsByClassName('drop_zone')[0];
         let dropZone = $('.drop_zone')[0];

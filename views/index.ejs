@@ -21,13 +21,17 @@
         <button class="example hidden" type="button"></button>
     </div>
     <div class="separadormini"></div>
-    <textarea autofocus class="drop_zone" cols="80" rows="5" id="original"></textarea>
-    <div class="separadormini"></div>
     <input type="file" class="inputfile" />
     <label for="file">Seleccione un fichero</label>
-    <br>
+    <div class="separadormini"></div>
+    <textarea autofocus class="drop_zone" cols="80" rows="5" id="original"></textarea>
+    <div class="separadormini"></div>
+    <form>
+        <input id="titulo" type="text" pattern="^[a-zA-Z_]\w*\.csv$">
+        <input id="guardar" type="submit">
+    </form>
+    <div class="separadormini"></div>
     <button type="button" id="parse">Generar Tabla</button>
-    <br>
     <div class="separador"></div>
     <span class="output" id="finaltable"></span>
 </div>

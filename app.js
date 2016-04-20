@@ -42,37 +42,39 @@ app.param('entrada', function(req, res, next, entrada) {
 const Input = require('./models/db-structure');
 
 app.get('/mongo/:entrada', function(req, res) {
-    console.log(req.entrada);
-
-    //mongoose.connect('mongodb://localhost/csv');
-
+    Input.find({}, function(err, docs) {
+        if (err)
+            return err;
+        if (docs.length >= 4) {
+            Input.find({ name: docs[3].name }).remove().exec();
+        }
+    });
     let input = new Input({
         "name": req.entrada,
-        "content": "test"
+        "content": req.query.content
     });
 
-    let promise = input.save(function(err) {
+    input.save(function(err) {
         if (err) {
             console.log(`Hubieron errores:\n${err}`);
             return err;
         }
         console.log(`Saved: ${input}`);
     });
-
-    Promise.resolve(promise).then((value) => {
-        console.log("CERRAR " + value);
-        //mongoose.connection.close();
-    });
 });
 
 app.get('/find', function(req, res) {
     Input.find({}, function(err, docs) {
+        if (err)
+            return err;
         res.send(docs);
     });
 });
 
 app.get('/findByName', function(req, res) {
-    Input.find({ name: req.query.name }, function(err, docs) {
+    Input.find({
+        name: req.query.name
+    }, function(err, docs) {
         res.send(docs);
     });
 });

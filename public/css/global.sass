@@ -66,6 +66,8 @@ nav > ul
     color: white
   textarea
     color: rgb(103, 103, 103)
+  .hidden
+    display: none
   button
     color: black
     background-color: rgb(221, 221, 221)
@@ -73,8 +75,6 @@ nav > ul
     padding: 5px 10px 5px 10px
     &:active
       background-color: rgb(159, 159, 159)
-    .hidden
-      display:none
   .inputfile
     opacity: 0
     overflow: hidden
@@ -95,6 +95,10 @@ nav > ul
       background-color: rgb(159, 159, 159)
     &:hover
       cursor: pointer
+  input
+    color: black
+  form
+    z-index: 99
 
 .output
   #result
@@ -122,6 +126,7 @@ footer
   position: absolute
   bottom: 0
   left: 0
+  z-index: -1
   ul
     list-style-type: none
   a
