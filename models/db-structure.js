@@ -2,11 +2,14 @@
     "use strict";
     const util = require('util');
     const mongoose = require('mongoose');
-    
-    mongoose.connect('mongodb://localhost/csv');
+
+    //mongoose.connect('mongodb://localhost/csv');
 
     const InputSchema = mongoose.Schema({
-        "name": { type: String, unique: true },
+        "name": {
+            type: String,
+            unique: true
+        },
         "content": String
     });
 
@@ -16,13 +19,13 @@
         "name": "input1.csv",
         "content": `"producto",           "precio"
                     "camisa",             "4,3"
-                    "libro de O\"Reilly", "7,2"`
+                    "libro de O\\"Reilly", "7,2"`
     });
     let input2 = new Input({
         "name": "input2.csv",
         "content": `"producto",           "precio"  "fecha"
                     "camisa",             "4,3",    "14/01"
-                    "libro de O\"Reilly", "7,2"     "13/02"`
+                    "libro de O\\"Reilly", "7,2"     "13/02"`
     });
     let input3 = new Input({
         "name": "input3.csv",
@@ -60,11 +63,11 @@
         console.log("Se han creado las entradas:\n" + util.inspect(value, {
             depth: null
         }));
-        mongoose.connection.close();
+        //mongoose.connection.close();
     }, (reason) => {
         console.log("No se han podido crear las entradas:\n" + reason);
-        mongoose.connection.close();
+        //mongoose.connection.close();
     });
-    
+
     module.exports = Input;
 })();
