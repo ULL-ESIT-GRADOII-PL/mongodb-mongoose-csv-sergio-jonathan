@@ -4,6 +4,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const expressLayouts = require('express-ejs-layouts');
+const mongoose = require('mongoose');
+    
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -32,8 +34,31 @@ app.param('entrada', function (req, res, next, entrada) {
   next();
 });
 
+const Input = require('./models/db-structure');
+
 app.get('/mongo/:entrada', function(req, res) { 
   console.log(req.entrada);
+  
+  mongoose.connect('mongodb://localhost/csv');
+
+  let input = new Input({
+        "name": req.entrada,
+        "content": "test"
+    });
+    
+    let promise = input.save(function(err) {
+        if (err) {
+            console.log(`Hubieron errores:\n${err}`);
+            return err;
+        }
+        console.log(`Saved: ${input}`);
+    });
+    
+    Promise.resolve(promise).then((value) => {
+      console.log(value);
+      mongoose.connection.close();
+
+    });
 });
 
 app.listen(app.get('port'), () => {
