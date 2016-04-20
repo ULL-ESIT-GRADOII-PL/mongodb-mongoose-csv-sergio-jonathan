@@ -79,6 +79,8 @@
         /* botones para rellenar el textarea */
         $('button.example').each((_, y) => {
             $(y).click(() => {
+                /* Buscamos la entrada de la BD especificada por el nombre del botón
+                    y colocamos el contenido de dicha entrada de la BD en el textarea*/
                 $.get("/findByName", {
                         name: $(y).text()
                     },
@@ -88,6 +90,8 @@
             });
         });
 
+        /*Buscamos las entradas guardadas en la BD para mostrar los botones
+          correspondientes con su nombre asociado*/
         $.get("/find", {}, (data) => {
             for (var i = 0; i < 4; i++) {
                 if (data[i]) {
@@ -97,6 +101,8 @@
             }
         });
 
+        /*Guardamos una nueva entrada en la BD, con el nombre especificado
+          por el usuario.*/
         $("#guardar").click(() => {
           if (window.localStorage) localStorage.original = original.value;
           $.get("/mongo/" + $("#titulo").val(), {

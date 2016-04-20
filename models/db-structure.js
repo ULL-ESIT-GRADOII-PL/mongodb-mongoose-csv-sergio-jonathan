@@ -3,8 +3,7 @@
     const util = require('util');
     const mongoose = require('mongoose');
 
-    //mongoose.connect('mongodb://localhost/csv');
-
+    /*Creamos el esquema de nuestra colección*/
     const InputSchema = mongoose.Schema({
         "name": {
             type: String,
@@ -13,8 +12,10 @@
         "content": String
     });
 
+    /*Creamos el modelo de datos Input a partir del esquema ya creado*/
     const Input = mongoose.model("Input", InputSchema);
 
+    /*Creamos los tres ejemplos iniciales*/
     let input1 = new Input({
         "name": "input1.csv",
         "content": `"producto",           "precio"
@@ -35,12 +36,13 @@
 
     });
 
+    /*Añadimos los ejemplos a la BD*/
     let promise1 = input1.save(function(err) {
         if (err) {
             console.log(`Hubieron errores:\n${err}`);
             return err;
         }
-        console.log(`Saved: ${input1}`);
+        console.log(`Guardado: ${input1}`);
     });
 
     let promise2 = input2.save(function(err) {
@@ -48,7 +50,7 @@
             console.log(`Hubieron errores:\n${err}`);
             return err;
         }
-        console.log(`Saved: ${input2}`);
+        console.log(`Guardado: ${input2}`);
     });
 
     let promise3 = input3.save(function(err) {
@@ -56,17 +58,16 @@
             console.log(`Hubieron errores:\n${err}`);
             return err;
         }
-        console.log(`Saved: ${input3}`);
+        console.log(`Guardado: ${input3}`);
     });
 
+    /*Esperamos a que se creen los ejemplos*/
     Promise.all([promise1, promise2, promise3]).then((value) => {
         console.log("Se han creado las entradas:\n" + util.inspect(value, {
             depth: null
         }));
-        //mongoose.connection.close();
     }, (reason) => {
         console.log("No se han podido crear las entradas:\n" + reason);
-        //mongoose.connection.close();
     });
 
     module.exports = Input;

@@ -5,6 +5,7 @@ const app = express();
 const path = require('path');
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
+//Se inicia la conexión a la BD
 mongoose.connect('mongodb://localhost/csv');
 
 
@@ -30,6 +31,7 @@ app.get('/csv', (request, response) => {
     });
 });
 
+/*Especificamos el formato del nombre de los ficheros de entrada*/
 app.param('entrada', function(req, res, next, entrada) {
     if (entrada.match(/^[a-z_]\w*\.csv$/i)) {
         req.entrada = entrada;
@@ -41,6 +43,8 @@ app.param('entrada', function(req, res, next, entrada) {
 
 const Input = require('./models/db-structure');
 
+/*Creamos una entrada nueva en la BD con el nombre recibido en el request
+  Si ya hay 4 entradas, se borra la última*/
 app.get('/mongo/:entrada', function(req, res) {
     Input.find({}, function(err, docs) {
         if (err)
@@ -59,10 +63,11 @@ app.get('/mongo/:entrada', function(req, res) {
             console.log(`Hubieron errores:\n${err}`);
             return err;
         }
-        console.log(`Saved: ${input}`);
+        console.log(`Guardado: ${input}`);
     });
 });
 
+/*Se devuelve un array con todas las entradas de la BD como respuesta*/
 app.get('/find', function(req, res) {
     Input.find({}, function(err, docs) {
         if (err)
@@ -71,6 +76,8 @@ app.get('/find', function(req, res) {
     });
 });
 
+/*Se devuelve como respuesta la entrada correspondiente al nombre
+  especificado en la request*/
 app.get('/findByName', function(req, res) {
     Input.find({
         name: req.query.name
