@@ -83,6 +83,10 @@ nav > ul > li {
   background-color: #9f9f9f;
 }
 
+.pagina button.hidden {
+  display: none;
+}
+
 .pagina .inputfile {
   opacity: 0;
   overflow: hidden;
