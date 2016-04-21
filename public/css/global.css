@@ -72,6 +72,10 @@ nav > ul > li {
   color: #676767;
 }
 
+.pagina .hidden {
+  display: none;
+}
+
 .pagina button {
   color: black;
   background-color: #dddddd;
@@ -111,6 +115,14 @@ nav > ul > li {
   cursor: pointer;
 }
 
+.pagina input {
+  color: black;
+}
+
+.pagina form {
+  z-index: 99;
+}
+
 .output #result {
   width: auto;
   margin: auto;
@@ -135,17 +147,35 @@ table, th, td {
   border: 1px solid white;
 }
 
+.prefooter {
+  height: 143px;
+}
+
 footer {
   width: 100%;
   text-align: left;
   text-indent: 2%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
 }
 
+footer:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../images/header.jpg") no-repeat bottom;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  z-index: -1;
+}
+
 footer ul {
   list-style-type: none;
+  width: 200px;
 }
 
 footer a {
@@ -155,6 +185,17 @@ footer a {
 
 footer a:hover {
   color: #c8cdcd;
+}
+
+footer #listamenu {
+  float: left;
+  display: inline-block;
+}
+
+footer #listaderecha {
+  float: right;
+  display: inline-block;
+  padding-right: 2%;
 }
 
 @media screen and (max-width: 860px) {
@@ -175,5 +216,8 @@ footer a:hover {
   }
   #original {
     width: 250px;
+  }
+  footer {
+    display: none;
   }
 }
